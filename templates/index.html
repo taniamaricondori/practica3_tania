@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Seminarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Registro de Seminarios</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('registro_seminario') }}">Registrar Seminario</a></li>
+                <li><a href="{{ url_for('listado_inscritos') }}">Listado de Inscritos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

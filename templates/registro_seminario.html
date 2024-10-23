@@ -1,0 +1,75 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Seminario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_form.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Registro en Seminario</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h3>Datos</h3>
+                <form action="{{ url_for('registro_seminario') }}" method="POST" class="registro-form">
+                    <div class="datos-container">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" required><br><br>
+
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required><br><br>
+
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+                        <label>Turno:</label><br>
+                        <div class="turnos-container">
+                            <input type="radio" id="mañana" name="turno" value="Mañana" required>
+                            <label for="mañana">Mañana</label><br>
+                            <input type="radio" id="tarde" name="turno" value="Tarde">
+                            <label for="tarde">Tarde</label><br>
+                            <input type="radio" id="noche" name="turno" value="Noche">
+                            <label for="noche">Noche</label><br><br>
+                        </div>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="submit">Enviar registro</button>
+                    </div>
+
+                    <div class="seminarios-container">
+                        <h3>Seminarios disponibles:</h3>
+                        <div class="seminarios">
+                            <div class="seminario-item">
+                                <input type="checkbox" id="ia" name="seminarios" value="Inteligencia Artificial">
+                                <label for="ia">Inteligencia Artificial</label>
+                            </div>
+                            <div class="seminario-item">
+                                <input type="checkbox" id="ml" name="seminarios" value="Machine Learning">
+                                <label for="ml">Machine Learning</label>
+                            </div>
+                            <div class="seminario-item">
+                                <input type="checkbox" id="arena" name="seminarios" value="Simulación con Arena">
+                                <label for="arena">Simulación con Arena</label>
+                            </div>
+                            <div class="seminario-item">
+                                <input type="checkbox" id="robotica" name="seminarios" value="Robótica Educativa">
+                                <label for="robotica">Robótica Educativa</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
